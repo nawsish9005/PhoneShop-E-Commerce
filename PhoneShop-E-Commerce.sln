@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShopClient", "PhoneShopClient\PhoneShopClient.csproj", "{05DE9F9B-C047-4911-A291-690DE83DA152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneShopClient", "PhoneShopClient\PhoneShopClient.csproj", "{05DE9F9B-C047-4911-A291-690DE83DA152}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShopServer", "PhoneShopServer\PhoneShopServer.csproj", "{172E1C68-645B-4312-AA74-A221C8BECD14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneShopServer", "PhoneShopServer\PhoneShopServer.csproj", "{172E1C68-645B-4312-AA74-A221C8BECD14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShopSharedLib", "PhoneShopSharedLib\PhoneShopSharedLib.csproj", "{1F059ABF-3AED-4DB5-9B10-08D2F3713303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{172E1C68-645B-4312-AA74-A221C8BECD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{172E1C68-645B-4312-AA74-A221C8BECD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{172E1C68-645B-4312-AA74-A221C8BECD14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F059ABF-3AED-4DB5-9B10-08D2F3713303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F059ABF-3AED-4DB5-9B10-08D2F3713303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F059ABF-3AED-4DB5-9B10-08D2F3713303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F059ABF-3AED-4DB5-9B10-08D2F3713303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
