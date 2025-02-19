@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PhoneShopServer.Data;
+using PhoneShopServer.Repositories;
+using PhoneShopSharedLib.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")?? throw new InvalidOperationException("Connect string not found"));
 });
 
+builder.Services.AddScoped<IProduct, ProductRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,6 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 app.UseAuthorization();
 app.MapRazorPages();

@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PhoneShopClient\PhoneShopClient.csproj" />
     <ProjectReference Include="..\PhoneShopSharedLib\PhoneShopSharedLib.csproj" />
   </ItemGroup>

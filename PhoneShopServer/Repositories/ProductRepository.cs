@@ -25,9 +25,17 @@ namespace PhoneShopServer.Repositories
             {
                 appDbContext.Products.Add(model);
                 await Commit();
-                return new ServiceResponse(true, "Saved");
+                return new ServiceResponse(true, "Product Saved");
             }
             return new ServiceResponse(flag, message);
+        }
+
+        public async Task<List<Product>> GetAllProducts(bool featureProducts)
+        {
+            if(featureProducts)
+                return await appDbContext.Products.Where(x => x.Featured).ToListAsync();
+            else
+                return await appDbContext.Products.ToListAsync();
         }
 
         private async Task<ServiceResponse> CheckName(string name)
