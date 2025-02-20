@@ -6,11 +6,9 @@
     <div class="col-md-6">
       <EditForm model="MyProduct" Enhance OnValidSubmit="HandleeSaveProduct">
         <DataAnnotationsValidator />
-        <ValidationSummery />
+        <ValidationSummary/>
         <div class="card">
-          <div class="card-header">
-            <h4>Add Product</h4>
-          </div>
+          <div class="card-header">Add Product</div>
           <div class="card-body">
             <div class="form-group">
               <label class="form-label">Name</label>
@@ -28,7 +26,7 @@
             </div>
 
             <div class="form-group mt-3">
-                <label class="form-label">Price</label>
+                <label class="form-label">Description</label>
                 <InputTextArea @bind-Value="MyProduct.Description" class="form-control"></InputTextArea>
             </div>
             <div class="form-group mt-3">
@@ -39,7 +37,6 @@
             </div>
           </div>
           <div class="card-footer">
-
               <div class="form-group mt-3">
                 @if(ShowSaveButton)
                 {
@@ -59,11 +56,31 @@
 </div>
 
 
-
 @code {
     Product MyProduct = new();
+    string ImageUploadMessage = "";
     async Task HandleeSaveProduct()
     {
-        // await Http.PostAsJsonAsync("api/Product", MyProduct);
+       
     }
+
+    async Task UploadImage(InputFileChangeEventArgs e)
+    {
+        if(e.File.Name.ToLower().Contains(".png"))
+        {
+            var format = "image/png";
+            var resizeImage = await e.File.RequestImageFileAsync(format, 300, 300);
+            var buffer = new byte[resizeImage.Size];
+            await resizeImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64, {Convert.ToBase64String(buffer)}";
+            ImageUploadMessage = "";
+            MyProduct.Base64Img = imageData;
+            imageData = "";
+            return;
+        }
+        ImageUploadMessage = "PNG file needed.";
+        return;
+    }
+    public bool ShowBusyButton { get; set; }
+    public bool ShowSaveButton { get; set; } = true;
 }
