@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneShopClient", "PhoneSho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneShopServer", "PhoneShopServer\PhoneShopServer.csproj", "{172E1C68-645B-4312-AA74-A221C8BECD14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShopSharedLib", "PhoneShopSharedLib\PhoneShopSharedLib.csproj", "{1F059ABF-3AED-4DB5-9B10-08D2F3713303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneShopSharedLib", "PhoneShopSharedLib\PhoneShopSharedLib.csproj", "{1F059ABF-3AED-4DB5-9B10-08D2F3713303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
